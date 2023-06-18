@@ -85,3 +85,26 @@ def are_community_besties(community: list, name1: str, name2: str) -> bool:
                 if friend["name"] == name2 and name1 in friend["friends"]:
                     return True
     return False
+def get_all_community_besties(community: list, name: str) -> list:
+    """
+    Determine all friends of the name passed in where they are on each other's "friends" list.
+
+    Args:
+        community (list): List of dictionaries to iterate through. Each dictionary must contain the keys
+                          "name", "friends", and "foes". The "name" values should be unique, and the
+                          "friends" and "foes" values must be lists.
+        name (str): Name of the person being examined within the list.
+
+    Returns:
+        list of dicts: List of all people within the list passed in if their names are in each other's
+                       "friends" list. Names are still added to the list if they are simultaneously in
+                       lists associated with "friends" and "foes".
+    """
+    besties = []
+    for person in community:
+        if person["name"] != name and person["name"] in person["friends"]:
+            for friend in community:
+                if friend["name"] == person["name"] and name in friend["friends"]:
+                    besties.append(person)
+                    break
+    return besties
