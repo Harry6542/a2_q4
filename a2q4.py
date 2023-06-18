@@ -37,3 +37,29 @@ def get_patient_people(community: list):
         list: List of dictionaries of those with no foes.
     """
     return [person for person in community if person["foes"] == []]
+def leave_community(community: list, name: str) -> None:
+    """
+    Go through the list of dictionaries passed in, removing name from lists for keys "friends" and "foes"
+    and the dictionary associated with their name.
+
+    Args:
+        community (list): List of dictionaries to iterate through. Each dictionary must contain the keys
+                          "name", "friends", and "foes". The "name" values should be unique, and the
+                          "friends" and "foes" values must be lists.
+        name (str): Name of the person being removed from the list.
+
+    Returns:
+        None
+    """
+    for person in community:
+        if person["name"] == name:
+            for friend in person["friends"]:
+                friend_person = next((p for p in community if p["name"] == friend), None)
+                if friend_person:
+                    friend_person["friends"].remove(name)
+            for foe in person["foes"]:
+                foe_person = next((p for p in community if p["name"] == foe), None)
+                if foe_person:
+                    foe_person["foes"].remove(name)
+            community.remove(person)
+            break
