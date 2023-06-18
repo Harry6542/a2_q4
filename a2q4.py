@@ -1,7 +1,8 @@
+###############################################################################
 # CMPT 145 Course material
 # Original Author: Lauresa Stilling
 # Date Created:   31 May 2023
-# Last Edited:    31 May 2023
+# Last Edited:    15 June 2023
 #
 # All rights reserved.
 #
@@ -12,12 +13,13 @@
 # to the University of Saskatchewan Policy on Academic Misconduct.
 #
 # Synopsis:
-#    Debugging exercise, relevant to Chapter 3 and 7
+#    Testing; relevant to Chapter 5, 6, 7
 ###############################################################################
 
 # TODO: Fill in your information below
 # Student Name-Harry Patel
 # NSID-ozc189
-# Student Number-1135887
+# Student Number-11358887
 
-# Recall another name for a list of dictionaries is a record.
+# TODO: TEST DRIVEN DEVELOPMENT
+
