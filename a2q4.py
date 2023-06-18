@@ -98,7 +98,7 @@ def get_all_community_besties(community: list, name: str) -> list:
     Returns:
         list of dicts: List of all people within the list passed in if their names are in each other's
                        "friends" list. Names are still added to the list if they are simultaneously in
-                       lists associated with "friends" and "foes".
+                       lists associated with "friends" and "foes"
     """
     besties = []
     for person in community:
