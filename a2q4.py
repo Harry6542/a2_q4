@@ -23,3 +23,17 @@
 
 # TODO: TEST DRIVEN DEVELOPMENT
 
+def get_patient_people(community: list):
+    """
+    Get a list of all dictionaries where the value for "foes" is an empty list.
+
+    Args:
+        community (list): List of dictionaries to iterate through. Each dictionary
+                          must contain the keys "name", "friends", and "foes".
+                          The "name" values should be unique, and the "friends" and "foes"
+                          values must be lists.
+
+    Returns:
+        list: List of dictionaries of those with no foes.
+    """
+    return [person for person in community if person["foes"] == []]
